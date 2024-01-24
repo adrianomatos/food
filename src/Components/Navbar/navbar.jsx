@@ -8,7 +8,7 @@ function Navbar() {
       <img src={logo} className="logotipo" alt="Logotipo" />
       
 			<div className="menu">
-        <a href="#">Histórico</a>
+        <a href="/historico">Histórico</a>
         <button className="btn btn-red">
           <img className="icon" src={bag} alt="Sacola" />
           Sacola
