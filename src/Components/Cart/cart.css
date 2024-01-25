@@ -1,0 +1,16 @@
+.lista-produtos {
+  height: calc(100% - 210px);
+	/* cria barra de rolagem p/ ñ ultrapassar altura */
+	overflow: auto;
+}
+
+.footer-cart {
+  border-top: 2px solid #e7e7e7;
+}
+
+.footer-cart-total {
+  margin: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
