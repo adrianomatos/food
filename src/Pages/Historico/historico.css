@@ -1,0 +1,9 @@
+.box-pedido{
+	border: 1px solid #cccccc;
+	padding: 40px;
+	border-radius: 20px;
+}
+
+tr:hover{
+	background-color: #cccccc;
+}
