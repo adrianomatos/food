@@ -3,7 +3,7 @@ import logo from "../../Assets/logo.png";
 import bag from "../../Assets/bag.png";
 import Cart from "../Cart/cart";
 
-function Navbar() {
+function Navbar(props) {
   function openSidebar() {
     const event = new CustomEvent("openSidebar");
     window.dispatchEvent(event);
@@ -13,15 +13,18 @@ function Navbar() {
     <div className="navbar">
       <img src={logo} className="logotipo" alt="Logotipo" />
 
-      <div className="menu">
-        <a href="/historico">Histórico</a>
+      {/* props.showMenu && */}
+      {props.showMenu ? (
+        <div className="menu">
+          <a href="/historico">Histórico</a>
+          <button onClick={openSidebar} className="btn btn-red">
+            <img className="icon" src={bag} alt="Sacola" />
+            Sacola
+          </button>
+        </div>
+      ) : null}
 
-        <button onClick={openSidebar} className="btn btn-red">
-          <img className="icon" src={bag} alt="Sacola" />
-          Sacola
-        </button>
-      </div>
-			<Cart />
+      <Cart />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import ProdutoVitrine from "../../Components/ProdutoVitrine/produtoVitrine.jsx";
 function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar showMenu={true}/>
 
       <div className="container">
         <div className="titulo text-center">

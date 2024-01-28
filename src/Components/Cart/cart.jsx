@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Dock } from "react-dock";
 import "./cart.css";
 import ProdutoCart from "../ProdutoCart/produtoCart.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   let [show, setShow] = useState(false);
-
   useEffect(function () {
     // monitora evento openSidebar
     window.addEventListener("openSidebar", function () {
@@ -13,6 +13,12 @@ function Cart() {
       setShow(true);
     });
   }, []);
+
+  // Transição entre telas sem refresh
+  const navigate = useNavigate();
+  function checkout() {
+    navigate("/checkout");
+  }
 
   return (
     <Dock
@@ -44,7 +50,9 @@ function Cart() {
         </div>
 
         <div>
-          <button className="btn-checkout">Finalizar Pedido</button>
+          <button onClick={checkout} className="btn-checkout">
+            Finalizar Pedido
+          </button>
         </div>
       </div>
     </Dock>
