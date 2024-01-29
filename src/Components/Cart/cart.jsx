@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Dock } from "react-dock";
 import "./cart.css";
 import ProdutoCart from "../ProdutoCart/produtoCart.jsx";
 import { useNavigate } from "react-router-dom";
-import { carrinho } from "../../Dados";
+import { CartContext } from "../../Contexts/cart-context.jsx";
 
 function Cart() {
-  // Itens do carrinho
-  const [cartItems, setCartItens] = useState([]);
+  // Acessa valores do CONTEXT API compartilhados globalmente na aplicação em index.js
+  const { cartItems, totalCart } = useContext(CartContext);
 
   let [show, setShow] = useState(false);
   useEffect(function () {
@@ -16,7 +16,6 @@ function Cart() {
       // Faz isso
       setShow(true);
     });
-    setCartItens(carrinho);
   }, []);
 
   // Transição entre telas sem refresh
@@ -57,9 +56,14 @@ function Cart() {
 
       <div className="footer-cart">
         <div className="footer-cart-total">
-          <span>Total</span>
+          <span>TOTAL</span>
           <span>
-            <strong>R$ 250,00</strong>
+            <strong>
+              {new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(totalCart)}
+            </strong>
           </span>
         </div>
 

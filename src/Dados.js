@@ -74,14 +74,14 @@ const carrinho = [
   {
     id: 1,
     nome: "X-Tudo",
-    preco: 20.0,
+    preco: 14.9,
     foto: "https://jornadajs-food.s3.amazonaws.com/spicy.png",
     qtd: 2,
   },
   {
     id: 2,
     nome: "Sanduba",
-    preco: 15.0,
+    preco: 12.0,
     foto: "https://jornadajs-food.s3.amazonaws.com/sanduba.png",
     qtd: 1,
   },

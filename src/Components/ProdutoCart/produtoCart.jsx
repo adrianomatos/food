@@ -1,19 +1,29 @@
 import "./produtoCart.css";
-import { useState } from "react";
-// import foto from "../../Assets/hamburguer.png";
+import { CartContext } from "../../Contexts/cart-context";
+import { useContext } from "react";
 
 function ProdutoCart(props) {
-  let [valor, setValor] = useState(1);
+  const { AddItemCart, RemoveItemCart } = useContext(CartContext);
 
-  function Soma() {
-    setValor(valor + 1);
+  // ADICIONA ITEM
+  function AddItem() {
+    const item = {
+      id: props.id,
+      nome: props.nome,
+      preco: props.preco,
+      foto: props.foto,
+      qtd: 1,
+    };
+    AddItemCart(item);
   }
-  function Subtrai() {
-    setValor(valor - 1);
+
+  // REMOVE ITEM
+  function RemoveItem() {
+    RemoveItemCart(props.id);
   }
 
   return (
-    <div className="produto-cart-box" >
+    <div className="produto-cart-box">
       <img src={props.foto} alt="Foto produto" />
 
       <div className="descricao">
@@ -27,11 +37,11 @@ function ProdutoCart(props) {
 
         <div className="footer-produto-cart">
           <div>
-            <button className="footer-produto-btn" onClick={Subtrai}>
+            <button className="footer-produto-btn" onClick={RemoveItem}>
               -
             </button>
             <span className="footer-produto-qtd"> {props.qtd} </span>
-            <button className="footer-produto-btn" onClick={Soma}>
+            <button className="footer-produto-btn" onClick={AddItem}>
               +
             </button>
           </div>

@@ -2,6 +2,7 @@
   height: calc(100% - 210px);
 	/* cria barra de rolagem p/ ñ ultrapassar altura */
 	overflow: auto;
+	margin-right: 15px;
 }
 
 .footer-cart {
@@ -9,7 +10,7 @@
 }
 
 .footer-cart-total {
-  margin: 10px 20px;
+  margin: 10px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
