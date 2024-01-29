@@ -3,8 +3,12 @@ import { Dock } from "react-dock";
 import "./cart.css";
 import ProdutoCart from "../ProdutoCart/produtoCart.jsx";
 import { useNavigate } from "react-router-dom";
+import { carrinho } from "../../Dados";
 
 function Cart() {
+  // Itens do carrinho
+  const [cartItems, setCartItens] = useState([]);
+
   let [show, setShow] = useState(false);
   useEffect(function () {
     // monitora evento openSidebar
@@ -12,6 +16,7 @@ function Cart() {
       // Faz isso
       setShow(true);
     });
+    setCartItens(carrinho);
   }, []);
 
   // Transição entre telas sem refresh
@@ -36,9 +41,18 @@ function Cart() {
       </div>
 
       <div className="lista-produtos">
-        <ProdutoCart />
-        <ProdutoCart />
-        <ProdutoCart />
+        {cartItems.map(function (item) {
+          return (
+            <ProdutoCart
+              key={item.id}
+              id={item.id}
+              nome={item.nome}
+              preco={item.preco}
+              foto={item.foto}
+              qtd={item.qtd}
+            />
+          );
+        })}
       </div>
 
       <div className="footer-cart">

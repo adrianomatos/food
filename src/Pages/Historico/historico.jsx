@@ -1,5 +1,6 @@
 import Navbar from "../../Components/Navbar/navbar";
 import "./historico.css";
+import { pedidos } from "../../Dados";
 
 function Historico() {
   return (
@@ -13,51 +14,25 @@ function Historico() {
 
         <div className="box-pedido">
           <table className="table">
-            <tr>
-              <th>Nº PEDIDO</th>
-              <th>DATA</th>
-              <th>VALOR</th>
-            </tr>
+            <thead>
+              <tr>
+                <th>Nº PEDIDO</th>
+                <th>DATA</th>
+                <th>VALOR</th>
+              </tr>
+            </thead>
 
-            <tr className="text-center">
-              <td>
-                <strong>Pedido: 51354</strong>
-              </td>
-              <td className="text-light">02/01/2024</td>
-              <td className="text-red">R$ 123,00</td>
-            </tr>
-
-            <tr className="text-center">
-              <td>
-                <strong>Pedido: 51354</strong>
-              </td>
-              <td className="text-light">12/01/2024</td>
-              <td className="text-red">R$ 133,00</td>
-            </tr>
-
-            <tr className="text-center">
-              <td>
-                <strong>Pedido: 51354</strong>
-              </td>
-              <td className="text-light">14/01/2024</td>
-              <td className="text-red">R$ 120,00</td>
-            </tr>
-
-            <tr className="text-center">
-              <td>
-                <strong>Pedido: 51354</strong>
-              </td>
-              <td className="text-light">20/01/2024</td>
-              <td className="text-red">R$ 98,00</td>
-            </tr>
-
-            <tr className="text-center">
-              <td>
-                <strong>Pedido: 51354</strong>
-              </td>
-              <td className="text-light">27/01/2024</td>
-              <td className="text-red">R$ 88,00</td>
-            </tr>
+            <tbody>
+              {pedidos.map(function (pedido) {
+                return (
+                  <tr key={pedido.key} className="text-center">
+                    <td><strong>Pedido: {pedido.id_pedido}</strong></td>
+                    <td className="text-light">{pedido.dt}</td>
+                    <td className="text-red">{new Intl.NumberFormat('pt-BR',{style:'currency',currency:"BRL"}).format(pedido.total)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
       </div>
