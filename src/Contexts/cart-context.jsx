@@ -15,7 +15,7 @@ function CartProvider(props) {
     // Verifica se item já existe no carrinho...
     for (var prod of cartItems) {
       // Se encontrou
-      if (prod.id == item.id) {
+      if (prod.id === item.id) {
         item.qtd = prod.qtd + 1;
         findItem = true;
         cartItemsNovo.push(item);
@@ -25,7 +25,7 @@ function CartProvider(props) {
     }
 
     // Se não encontrou o item ou é o primeiro a ser inserido...
-    if (findItem == false || cartItems.legth == 0) {
+    if (findItem === false || cartItems.legth === 0) {
       cartItemsNovo.push(item);
     }
 
@@ -44,7 +44,7 @@ function CartProvider(props) {
     // Localiza o item e atualiza...
     for (var prod of cartItems) {
       // Se encontrou
-      if (prod.id == id) {
+      if (prod.id === id) {
         prod.qtd = prod.qtd - 1;
       }
       cartItemsNovo.push(prod);

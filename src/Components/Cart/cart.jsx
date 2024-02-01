@@ -4,6 +4,7 @@ import "./cart.css";
 import ProdutoCart from "../ProdutoCart/produtoCart.jsx";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../Contexts/cart-context.jsx";
+import back from "../../Assets/back.png"
 
 function Cart() {
   // Acessa valores do CONTEXT API compartilhados globalmente na aplicação em index.js
@@ -29,13 +30,19 @@ function Cart() {
       position="right"
       isVisible={show}
       fluid={false}
-      size={420}
+      size={360}
       // ALtera p/ false clicando fora
       onVisibleChange={function (visible) {
         setShow(visible);
       }}
     >
       <div className="text-center">
+        <img
+          onClick={(e)=>setShow(false)}
+          src={back}
+          alt="Botao Fechar"
+          className="cart-btn-close"
+        />
         <h1>Meu Pedido</h1>
       </div>
 

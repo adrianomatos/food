@@ -1,9 +1,17 @@
-.box-pedido{
-	border: 1px solid #cccccc;
-	padding: 40px;
-	border-radius: 20px;
+.box-pedido {
+  border: 1px solid #cccccc;
+  padding: 30px;
+  border-radius: 20px;
 }
 
-tr:hover{
-	background-color: #cccccc;
+tr:hover {
+  background-color: #cccccc;
+}
+
+@media screen and (max-width: 500px) {
+  .box-pedido {
+    font-size: 0.9rem;
+    padding: 0px;
+		padding-top: 10px;
+  }
 }
