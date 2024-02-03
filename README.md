@@ -12,6 +12,7 @@
   <li>🍟Node</li>
   <li>🥤SQLite</li>
   <li>🍝Postman</li>
+  <li>🐱‍👤Git e GitHub</li>
 </ul>
 
 <h2>Conceitos abordados:</h2>
