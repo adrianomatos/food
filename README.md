@@ -14,6 +14,21 @@
   <li>🍝Postman</li>
 </ul>
 
+<h2>Conceitos abordados:</h2>
+<ul>
+  <li>Props</li>
+  <li>React-dock</li>
+  <li>UseState</li>
+  <li>UseEffect</li>
+  <li>Navigate</li>
+  <li>Link</li>
+  <li>Context API</li>
+  <li>Arrow function</li>
+  <li>Axios</li>
+  <li>Promisses</li>
+  <li>Etc...</li>
+</ul>
+
 <h2>Telas:</h2>
 
 <h3>Home e Carrinho</h3>
